@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 
 import pytest
 
-_APP_PATH = Path(__file__).resolve().parents[1] / "app.py"
+_APP_PATH = Path(__file__).resolve().parents[1] / "main.py"
 _APP_SPEC = importlib.util.spec_from_file_location("flask_web_app", _APP_PATH)
 flask_app = importlib.util.module_from_spec(_APP_SPEC)
 _APP_SPEC.loader.exec_module(flask_app)
