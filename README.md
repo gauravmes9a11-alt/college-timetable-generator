@@ -61,6 +61,8 @@ Built as a Software Engineering course project at PES University.
 
 If no complete timetable exists (for example, a teacher is asked to teach more periods than there are slots, or there is not enough room-slot capacity), the app returns a descriptive error instead of a partial result.
 
+---
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -71,39 +73,63 @@ If no complete timetable exists (for example, a teacher is asked to teach more p
 | CI | GitHub Actions |
 | Deployment | Render (gunicorn) |
 
+---
+
 ## Project Structure
 
 ```
 college-timetable-generator/
-├── .github/workflows/
-│   ├── ci.yml               # CI pipeline
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml                         # GitHub Actions CI pipeline
+│
 ├── app/
-│   ├── __init__.py
-│   ├── scheduler.py         # Backtracking timetable generator
-│   └── constraints.py       # Clash detection and timetable validation
+│   ├── __init__.py                        # Application package
+│   ├── constraints.py                     # Clash detection and timetable validation
+│   └── scheduler.py                       # Backtracking timetable generation
+│
+├── demo_video/
+│   ├── Sprint_1.mp4                       # Sprint 1 project demonstration
+│   └── Sprint_2.mp4                       # Sprint 2 project demonstration
+│
 ├── jira_sprint/
-|   ├── sprint1 burndown chart.png
-│   └── sprint1 burnup chart.png
-│   └── sprint2 burndown chart.png
-│   └── sprint2 burnup chart.png
+│   ├── 01A_Jira_Dashboard.png
+│   ├── 01B_Jira_Dashboard.png
+│   ├── 02_Product_Backlog.png
+│   ├── 03_Completed_Sprints_All_Work_Items.png
+│   ├── 04_Sprint_Backlogs.png
+│   ├── 05_Sprint_Progress.png
+│   ├── 06A_Sprint_1_Burndown.png
+│   ├── 06B_Sprint_2_Burndown.png
+│   ├── 07A_Sprint_1_Burnup.png
+│   ├── 07B_Sprint_2_Burnup.png
+│   └── README.md                          # Jira sprint evidence documentation
+│
 ├── static/
-│   ├── app.js               # Dynamic rows, theme toggle, form behaviour
-│   └── style.css 
+│   ├── app.js                             # Frontend interactions and form behaviour
+│   └── style.css                          # Application styling
+│
 ├── templates/
-│   ├── index.html           # Configuration form
-│   └── results.html         # Weekly timetable view
-├── test_data/               # Ready-made valid, impossible and invalid CSVs
+│   ├── index.html                         # Timetable configuration interface
+│   └── results.html                       # Generated timetable view
+│
+├── test_data/                             # Ready-made valid, impossible and invalid CSVs
+│
 ├── tests/
-│   ├── test_scheduler.py    # Scheduler and constraint tests
-│   └── test_flask_main.py   # Route, form, CSV and UI tests
+│   ├── test_flask_main.py                  # Flask application tests
+│   └── test_scheduler.py                   # Scheduler and constraint tests
+│
 ├── .gitignore
-├── Procfile                 # Process definition (gunicorn)
-|── README.md
-├── main.py                  # Flask app: routes, form/CSV parsing, validation
-├── render.yaml              # Render service configuration
-├── requirements.txt
+├── Procfile                                # Gunicorn process configuration
+├── README.md                               # Main project documentation
+├── main.py                                 # Flask application entry point : routes, form/CSV parsing, validation
+├── render.yaml                             # Render deployment configuration
+└── requirements.txt                        # Python dependencies
 
 ```
+
+---
 
 ## Getting Started
 
@@ -205,3 +231,5 @@ Course deliverables are included in the repository:
 
 
 [College Timetable Generator on GitHub](https://github.com/harshithabt/college-timetable-generator)
+
+---
